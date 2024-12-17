@@ -38,7 +38,6 @@ jobs:
       TF_VAR_clusterName: ${{ github.event.inputs.clusterName }}
       TF_VAR_region: ${{ github.event.inputs.region }}
       TF_VAR_action: ${{ github.event.inputs.action }}
-      TF_VAR_tfe_token: ${{ secrets.TF_API_TOKEN}}
       TF_VAR_subscription_id: ${{ secrets.subscription_id }}
     if: ${{ github.event.inputs.action == 'apply' }}
     steps:
@@ -48,10 +47,10 @@ jobs:
       run: echo $TF_VAR_organizationName
     - name: Test TF_VAR_subscription_id
       run: echo $TF_VAR_subscription_id
-    - name: Set env TF_VAR_subscription_id1
-      run: echo "TF_VAR_subscription_id1=${{ secrets.subscription_id }}" >> $GITHUB_ENV
-    - name: Test TF_VAR_subscription_id1
-      run: echo $TF_VAR_subscription_id1   
+    - name: Set env TF_VAR_tfe_token
+      run: echo "TF_VAR_tfe_token=${{ secrets.TF_API_TOKEN }}" >> $GITHUB_ENV
+    - name: Test TF_VAR_tfe_token
+      run: echo $TF_VAR_tfe_token   
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
       with:
