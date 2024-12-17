@@ -47,12 +47,6 @@ jobs:
         echo "action = \"${{ github.event.inputs.action }}\"" >> Terraform/terraform.tfvars
         echo "subscription_id = \"${{ secrets.subscription_id }}\"" >> Terraform/terraform.tfvars
         echo "tfe_token = \"${{ secrets.TF_API_TOKEN }}\"" >> Terraform/terraform.tfvars  
-    - name: Path terraform.tfvars file
-      run: pwd   
-    - name: ls terraform.tfvars file
-      run: ls          
-    - name: See terraform.tfvars file
-      run: cat Terraform.tfvars      
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
       with:
