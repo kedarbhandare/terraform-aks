@@ -44,6 +44,14 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+    - name: Test TF_VAR_organizationName
+      run: echo $TF_VAR_organizationName
+    - name: Test TF_VAR_subscription_id
+      run: echo $TF_VAR_subscription_id
+    - name: Set env TF_VAR_subscription_id1
+      run: echo "TF_VAR_subscription_id1=${{ secrets.subscription_id }}" >> $GITHUB_ENV
+    - name: Test TF_VAR_subscription_id1
+      run: echo $TF_VAR_subscription_id1   
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
       with:
