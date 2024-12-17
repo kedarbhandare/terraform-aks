@@ -39,10 +39,10 @@ jobs:
       run: |
         echo "organization_name = \"${{ github.event.inputs.organizationName }}\"" > Terraform/terraform.tfvars
         echo "email = \"${{ github.event.inputs.email }}\"" >> Terraform/terraform.tfvars
-        echo "project_name = \"${{ github.event.inputs.projectName }}\"" >> Terraform/terraform.tfvars
-        echo "workspace_name = \"${{ github.event.inputs.workspaceName }}\"" >> Terraform/terraform.tfvars
-        echo "resource_group_name = \"${{ github.event.inputs.resourceGroupName }}\"" >> Terraform/terraform.tfvars
-        echo "cluster_name = \"${{ github.event.inputs.clusterName }}\"" >> Terraform/terraform.tfvars
+        echo "projectName = \"${{ github.event.inputs.projectName }}\"" >> Terraform/terraform.tfvars
+        echo "workspaceName = \"${{ github.event.inputs.workspaceName }}\"" >> Terraform/terraform.tfvars
+        echo "resourceGroupName = \"${{ github.event.inputs.resourceGroupName }}\"" >> Terraform/terraform.tfvars
+        echo "clusterName = \"${{ github.event.inputs.clusterName }}\"" >> Terraform/terraform.tfvars
         echo "region = \"${{ github.event.inputs.region }}\"" >> Terraform/terraform.tfvars
         echo "action = \"${{ github.event.inputs.action }}\"" >> Terraform/terraform.tfvars
         echo "subscription_id = \"${{ secrets.subscription_id }}\"" >> Terraform/terraform.tfvars
@@ -74,10 +74,10 @@ jobs:
       run: |
         echo "organization_name = \"${{ github.event.inputs.organizationName }}\"" > Terraform/terraform.tfvars
         echo "email = \"${{ github.event.inputs.email }}\"" >> Terraform/terraform.tfvars
-        echo "project_name = \"${{ github.event.inputs.projectName }}\"" >> Terraform/terraform.tfvars
-        echo "workspace_name = \"${{ github.event.inputs.workspaceName }}\"" >> Terraform/terraform.tfvars
-        echo "resource_group_name = \"${{ github.event.inputs.resourceGroupName }}\"" >> Terraform/terraform.tfvars
-        echo "cluster_name = \"${{ github.event.inputs.clusterName }}\"" >> Terraform/terraform.tfvars
+        echo "projectName = \"${{ github.event.inputs.projectName }}\"" >> Terraform/terraform.tfvars
+        echo "workspaceName = \"${{ github.event.inputs.workspaceName }}\"" >> Terraform/terraform.tfvars
+        echo "resourceGroupName = \"${{ github.event.inputs.resourceGroupName }}\"" >> Terraform/terraform.tfvars
+        echo "clusterName = \"${{ github.event.inputs.clusterName }}\"" >> Terraform/terraform.tfvars
         echo "region = \"${{ github.event.inputs.region }}\"" >> Terraform/terraform.tfvars
         echo "action = \"${{ github.event.inputs.action }}\"" >> Terraform/terraform.tfvars
         echo "subscription_id = \"${{ secrets.subscription_id }}\"" >> Terraform/terraform.tfvars
