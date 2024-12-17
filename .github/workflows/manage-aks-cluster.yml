@@ -35,16 +35,16 @@ jobs:
       uses: actions/checkout@v2
     - name: Create terraform.tfvars file
       run: |
-      echo "organization_name = \"${{ github.event.inputs.organizationName }}\"" > Terraform/terraform.tfvars
-      echo "email = \"${{ github.event.inputs.email }}\"" >> Terraform/terraform.tfvars
-      echo "project_name = \"${{ github.event.inputs.projectName }}\"" >> Terraform/terraform.tfvars
-      echo "workspace_name = \"${{ github.event.inputs.workspaceName }}\"" >> Terraform/terraform.tfvars
-      echo "resource_group_name = \"${{ github.event.inputs.resourceGroupName }}\"" >> Terraform/terraform.tfvars
-      echo "cluster_name = \"${{ github.event.inputs.clusterName }}\"" >> Terraform/terraform.tfvars
-      echo "region = \"${{ github.event.inputs.region }}\"" >> Terraform/terraform.tfvars
-      echo "action = \"${{ github.event.inputs.action }}\"" >> Terraform/terraform.tfvars
-      echo "subscription_id = \"${{ secrets.subscription_id }}\"" >> Terraform/terraform.tfvars
-      echo "tfe_token = \"${{ secrets.TF_API_TOKEN }}\"" > Terraform/terraform.tfvars  
+        echo "organization_name = \"${{ github.event.inputs.organizationName }}\"" > Terraform/terraform.tfvars
+        echo "email = \"${{ github.event.inputs.email }}\"" >> Terraform/terraform.tfvars
+        echo "project_name = \"${{ github.event.inputs.projectName }}\"" >> Terraform/terraform.tfvars
+        echo "workspace_name = \"${{ github.event.inputs.workspaceName }}\"" >> Terraform/terraform.tfvars
+        echo "resource_group_name = \"${{ github.event.inputs.resourceGroupName }}\"" >> Terraform/terraform.tfvars
+        echo "cluster_name = \"${{ github.event.inputs.clusterName }}\"" >> Terraform/terraform.tfvars
+        echo "region = \"${{ github.event.inputs.region }}\"" >> Terraform/terraform.tfvars
+        echo "action = \"${{ github.event.inputs.action }}\"" >> Terraform/terraform.tfvars
+        echo "subscription_id = \"${{ secrets.subscription_id }}\"" >> Terraform/terraform.tfvars
+        echo "tfe_token = \"${{ secrets.TF_API_TOKEN }}\"" > Terraform/terraform.tfvars  
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
       with:
@@ -70,16 +70,16 @@ jobs:
       uses: actions/checkout@v2
     - name: Create terraform.tfvars file
       run: |
-      echo "organization_name = \"${{ github.event.inputs.organizationName }}\"" > Terraform/terraform.tfvars
-      echo "email = \"${{ github.event.inputs.email }}\"" >> Terraform/terraform.tfvars
-      echo "project_name = \"${{ github.event.inputs.projectName }}\"" >> Terraform/terraform.tfvars
-      echo "workspace_name = \"${{ github.event.inputs.workspaceName }}\"" >> Terraform/terraform.tfvars
-      echo "resource_group_name = \"${{ github.event.inputs.resourceGroupName }}\"" >> Terraform/terraform.tfvars
-      echo "cluster_name = \"${{ github.event.inputs.clusterName }}\"" >> Terraform/terraform.tfvars
-      echo "region = \"${{ github.event.inputs.region }}\"" >> Terraform/terraform.tfvars
-      echo "action = \"${{ github.event.inputs.action }}\"" >> Terraform/terraform.tfvars
-      echo "subscription_id = \"${{ secrets.subscription_id }}\"" >> Terraform/terraform.tfvars
-      echo "tfe_token = \"${{ secrets.TF_API_TOKEN }}\"" > Terraform/terraform.tfvars   
+        echo "organization_name = \"${{ github.event.inputs.organizationName }}\"" > Terraform/terraform.tfvars
+        echo "email = \"${{ github.event.inputs.email }}\"" >> Terraform/terraform.tfvars
+        echo "project_name = \"${{ github.event.inputs.projectName }}\"" >> Terraform/terraform.tfvars
+        echo "workspace_name = \"${{ github.event.inputs.workspaceName }}\"" >> Terraform/terraform.tfvars
+        echo "resource_group_name = \"${{ github.event.inputs.resourceGroupName }}\"" >> Terraform/terraform.tfvars
+        echo "cluster_name = \"${{ github.event.inputs.clusterName }}\"" >> Terraform/terraform.tfvars
+        echo "region = \"${{ github.event.inputs.region }}\"" >> Terraform/terraform.tfvars
+        echo "action = \"${{ github.event.inputs.action }}\"" >> Terraform/terraform.tfvars
+        echo "subscription_id = \"${{ secrets.subscription_id }}\"" >> Terraform/terraform.tfvars
+        echo "tfe_token = \"${{ secrets.TF_API_TOKEN }}\"" > Terraform/terraform.tfvars   
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
       with:
