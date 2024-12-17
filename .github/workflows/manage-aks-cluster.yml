@@ -23,8 +23,10 @@ on:
         required: true
       region:
         description: 'The Azure region where the cluster will be deployed'
+        required: true
       action:
         description: 'Action to perform (apply/destroy)'
+        required: true
 
 jobs:
   apply_cluster:
@@ -44,7 +46,13 @@ jobs:
         echo "region = \"${{ github.event.inputs.region }}\"" >> Terraform/terraform.tfvars
         echo "action = \"${{ github.event.inputs.action }}\"" >> Terraform/terraform.tfvars
         echo "subscription_id = \"${{ secrets.subscription_id }}\"" >> Terraform/terraform.tfvars
-        echo "tfe_token = \"${{ secrets.TF_API_TOKEN }}\"" > Terraform/terraform.tfvars  
+        echo "tfe_token = \"${{ secrets.TF_API_TOKEN }}\"" >> Terraform/terraform.tfvars  
+    - name: Path terraform.tfvars file
+      run: pwd   
+    - name: ls terraform.tfvars file
+      run: ls          
+    - name: See terraform.tfvars file
+      run: cat Terraform.tfvars      
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
       with:
@@ -79,7 +87,7 @@ jobs:
         echo "region = \"${{ github.event.inputs.region }}\"" >> Terraform/terraform.tfvars
         echo "action = \"${{ github.event.inputs.action }}\"" >> Terraform/terraform.tfvars
         echo "subscription_id = \"${{ secrets.subscription_id }}\"" >> Terraform/terraform.tfvars
-        echo "tfe_token = \"${{ secrets.TF_API_TOKEN }}\"" > Terraform/terraform.tfvars   
+        echo "tfe_token = \"${{ secrets.TF_API_TOKEN }}\"" >> Terraform/terraform.tfvars
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
       with:
