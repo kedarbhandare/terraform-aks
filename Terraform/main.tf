@@ -46,8 +46,12 @@ resource "azurerm_kubernetes_cluster" "aks" {
   }
 }
 
+resource "random_string" "racr" {
+  length           = 5
+}
+
 resource "azurerm_container_registry" "acr" {
-  name                = var.acr_name
+  name                = "${var.acr_name}-${random_string.racr.result}"
   resource_group_name = azurerm_resource_group.aks_rg.name
   location            = azurerm_resource_group.aks_rg.location
   sku                 = "Basic"
