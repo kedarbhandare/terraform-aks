@@ -47,10 +47,8 @@ jobs:
       run: echo $TF_VAR_organizationName
     - name: Test TF_VAR_subscription_id
       run: echo $TF_VAR_subscription_id
-    - name: Set env TF_VAR_tfe_token
-      run: echo "TF_VAR_tfe_token=${{ secrets.TF_API_TOKEN }}" >> $GITHUB_ENV
-    - name: Test TF_VAR_tfe_token
-      run: echo $TF_VAR_tfe_token   
+    - name: Create terraform.tfvars file
+      run: echo "tfe_token = \"${{ secrets.TF_API_TOKEN }}\"" > Terraform/terraform.tfvars  
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
       with:
