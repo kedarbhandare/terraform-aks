@@ -52,7 +52,7 @@ resource "random_string" "racr" {
 }
 
 resource "azurerm_container_registry" "acr" {
-  name                = "${var.acr_name}${random_string.racr.result}"
+  name                = var.acr_name
   resource_group_name = azurerm_resource_group.aks_rg.name
   location            = azurerm_resource_group.aks_rg.location
   sku                 = "Basic"
